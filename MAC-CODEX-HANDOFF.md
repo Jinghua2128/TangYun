@@ -18,8 +18,8 @@
 - `HANDOFF.md`：当前任务状态。必须保持真实、可续接；不要声称未验证的操作已完成。
 - `MAC-CODEX-HANDOFF.md`：本文件，给 Mac 上的新 Codex 的完整操作说明。
 - `账号运营诊断-2026-08-18.md`：基于内容规划做的账号策略诊断，非账号数据抓取结论。
-- `账号头像-月山灯.png`、`主页背景-晨雾山水.png`：已有账号资产，请勿覆盖。
-- `YYYY-MM-DD-诗名-主视觉.png`：每日 9:16 主视觉；`备选` 文件是同日备用内容。当前共有 58 张 PNG 主视觉/账号资产，整个目录约 128 MiB。
+- `images/account-assets/账号头像-月山灯.png`、`images/account-assets/主页背景-晨雾山水.png`：已有账号资产，请勿覆盖。
+- `images/YYYY-MM/YYYY-MM-DD-诗名-主视觉.png`：每日 9:16 主视觉按月份归档；`备选` 文件是同日备用内容。当前共有 59 张 PNG 主视觉/账号资产，整个目录约 130 MiB。
 
 当前内容库已记录至 **2026-09-22**，最新正片为杜牧《山行》。2026-09-18、09-19 没有内容记录；除非用户明确要求补发，不要自行补写。
 
@@ -80,8 +80,8 @@ hashtags：恰好 5 个相关标签。
 
 1. 使用 Codex 内置 image generation 工具；在调用前按 Mac 本机的 `imagegen` skill 指示完整阅读其 `SKILL.md`。
 2. 使用结构化 Prompt：明确 `Use case: historical-scene`、资产用途、主体、构图、光线、配色、留白和禁止项。
-3. 内置工具通常把成图放到 Codex 的默认 generated-images 目录；确认成图后，**复制**（不要移动或删除原件）到仓库根目录。
-4. 统一命名：`YYYY-MM-DD-诗名-主视觉.png`。同日备选使用 `YYYY-MM-DD-备选N-诗名-主视觉.png`。
+3. 内置工具通常把成图放到 Codex 的默认 generated-images 目录；确认成图后，**复制**（不要移动或删除原件）到仓库的对应月份目录 `images/YYYY-MM/`。
+4. 统一命名：`images/YYYY-MM/YYYY-MM-DD-诗名-主视觉.png`。同日备选使用 `images/YYYY-MM/YYYY-MM-DD-备选N-诗名-主视觉.png`；如果月份目录不存在，先创建。
 5. 不覆盖旧图；如需改版，新增 `-v2` 文件。
 
 ## 账号风格与运营原则
@@ -104,7 +104,7 @@ hashtags：恰好 5 个相关标签。
 ```bash
 git pull --ff-only
 # 生成并核对当天内容后：
-git add HANDOFF.md daily-poetry-history.md MAC-CODEX-HANDOFF.md *.png
+git add HANDOFF.md daily-poetry-history.md MAC-CODEX-HANDOFF.md images/
 git commit -m "content: add YYYY-MM-DD daily Tang poem"
 git push
 ```
